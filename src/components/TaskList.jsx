@@ -14,7 +14,7 @@ function TaskList({query}) {
           <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
             {task.title}
           </span>
-          <button data-testid={task.id} onClick={() => toggleComplete(task.id)}>
+          <button data-testid={task.id}>
             {task.completed ? "Undo" : "Complete"}
           </button>
         </li>
