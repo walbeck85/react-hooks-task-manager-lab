@@ -133,3 +133,89 @@ Ensure the application:
 - Submits new task with `useId`
 - Marks tasks as complete.
 - Filters tasks shown on the page by a search input.
+# Task Manager App (Flatiron Bootcamp Lab – Standard Hooks)
+
+## Overview
+
+This application is a **Task Manager** built with React that demonstrates use of React's **standard hooks**: `useRef`, `useId`, and `useContext`. It was built as part of the **Course 5, Module 4** Flatiron lab to meet all listed requirements and pass all automated tests using a test-driven development approach.
+
+> **GitHub Repo:** [https://github.com/walbeck85/react-hooks-task-manager-lab](https://github.com/walbeck85/react-hooks-task-manager-lab)
+
+---
+
+## Features
+
+- **Add Tasks** using a form powered by `useId` for accessibility
+- **Mark Tasks Complete** using global state with `useContext`
+- **Search/Filter Tasks** using `useRef` to persist input state
+- All data is persisted via a JSON server backend (`npm run server`)
+- Responsive, semantic UI with clear feedback
+
+---
+
+## Technologies & Concepts
+
+| Concept      | Used For                                         |
+|--------------|--------------------------------------------------|
+| `useContext` | Global state management of all tasks             |
+| `useRef`     | Dynamic search input for task filtering          |
+| `useId`      | Accessible input field labels in the task form   |
+| `fetch`      | API calls to `http://localhost:6001/tasks`       |
+| `useEffect`  | Initial load of task data                        |
+
+---
+
+## Screenshots
+
+Here are some highlights from the completed app:
+> Full screenshot album: [Imgur Gallery](https://imgur.com/a/course-5-module-4-lab-standard-hooks-task-manager-hGB90Ze)
+
+---
+
+## Running the App Locally
+
+### 1. Clone and Install
+
+```sh
+git clone https://github.com/walbeck85/react-hooks-task-manager-lab.git
+cd react-hooks-task-manager-lab
+npm install
+```
+
+### 2. Start the App & Backend
+
+```sh
+npm run dev     # Starts Vite frontend
+npm run server  # Starts JSON backend on port 6001
+```
+
+### 3. Run Tests
+
+```sh
+npm run test
+```
+
+---
+
+## File Structure Highlights
+
+```
+├── src
+│   ├── context
+│   │   └── TaskContext.jsx  ← Global state using Context API
+│   ├── components
+│   │   └── TaskForm.jsx     ← Form with useId
+│   │   └── TaskList.jsx     ← Uses filteredTasks from context
+│   │   └── SearchInput.jsx  ← Search powered by useRef
+```
+
+---
+
+## Best Practices Followed
+
+- Final merge to `main` before CodeGrade submission
+- All tests pass (`npm run test`)
+- Dead code removed, `.gitignore` is clean
+- README includes screenshots and full documentation
+
+---
