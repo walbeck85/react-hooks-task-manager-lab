@@ -1,24 +1,22 @@
-import React, { useRef, useState, useContext } from "react";
-import TaskList from "./TaskList";
+import React, { useRef, useContext } from "react";
 import { TaskContext } from "../context/TaskContext";
 
 function SearchBar() {
-  const [query, setQuery] = useState("");
+  const { setFilter } = useContext(TaskContext);
+  const searchRef = useRef();
 
-  function handleSearch(e) {
-    setQuery(e.target.value);
+  function handleSearchChange() {
+    setFilter(searchRef.current.value);
   }
-
 
   return (
     <div>
       <input
         type="text"
         placeholder="Search tasks..."
-        value={query}
-        onChange={handleSearch}
+        ref={searchRef}
+        onChange={handleSearchChange}
       />
-      <TaskList query={query}/>
     </div>
   );
 }
